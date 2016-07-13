@@ -1,42 +1,42 @@
 <div id="directory" class="section">
-    <h1>How to get started with RequireJS</h1>
+    <h1>开始使用RequireJS</h1>
 
     <ul class="index mono">
         <li class="hbox">
-            <a href="#get">Get RequireJS</a><span class="spacer boxFlex"></span><span class="sect">&sect; 1</span>
+            <a href="#get" title="英文原文：Get RequireJS">获取 RequireJS</a><span class="spacer boxFlex"></span><span class="sect">&sect; 1</span>
         </li>
         <li class="hbox">
-            <a href="#add">Add RequireJS</a><span class="spacer boxFlex"></span><span class="sect">&sect; 2</span>
+            <a href="#add" title="英文原文：Add RequireJS">引入 RequireJS</a><span class="spacer boxFlex"></span><span class="sect">&sect; 2</span>
         </li>
         <li class="hbox">
-            <a href="#optimize">Optimize</a><span class="spacer boxFlex"></span><span class="sect">&sect; 3</span>
+            <a href="#optimize" title="英文原文：Optimize">优化</a><span class="spacer boxFlex"></span><span class="sect">&sect; 3</span>
         </li>
         <li class="hbox">
-            <a href="#examples">Examples</a><span class="spacer boxFlex"></span><span class="sect">&sect; 4</span>
+            <a href="#examples" title="英文原文：Examples">示例</a><span class="spacer boxFlex"></span><span class="sect">&sect; 4</span>
         </li>
     </ul>
 
-    <span class="note">Note: If you are using jQuery, there is a <a href="jquery.md">targeted jQuery tutorial</a></span>
+    <span class="note" title="英文原文：Note: If you are using jQuery, there is a targeted jQuery tutorial">注意: 如果你正在使用jQuery, 这有一份 <a href="jquery.md">针对 jQuery 的指南</a></span>
 </div>
 
 <div class="section">
 <h2>
-    <a name="get">Get RequireJS</a>
+    <a name="get" title="英文原文：Get RequireJS">获取 RequireJS</a>
     <span class="sectionMark">&sect; 1</span>
 </h2>
 
-<p>Go to the <a href="download.md">download</a> page and get the file.</p>
+<p>到 <a href="download.md" title="英文原文：Go to the download page and get the file.">下载</a> 页面 获取 RequireJS 文件。</p>
 </div>
 
 <div class="section">
 <h2>
-    <a name="add">Add RequireJS</a>
+    <a name="add" title="英文原文：Add RequireJS">引入 RequireJS</a>
     <span class="sectionMark">&sect; 2</span>
 </h2>
 
-<span class="note">Note: For jQuery-specific advice, see the <a href="jquery.html">jQuery integration page</a></span>
+<span class="note" title="英文原文：Note: For jQuery-specific advice, see the jQuery integration page">注意: 关于jQuery整合的建议, 请参阅 <a href="jquery.html">jQuery 整合页面</a></span>
 
-<p>This setup assumes you keep all your JavaScript files in a "scripts" directory in your project. For example, if you have a project that has a project.html page, with some scripts, the directory layout might look like so:</p>
+<p title="英文原文：This setup assumes you keep all your JavaScript files in a &quot;scripts&quot; directory in your project. For example, if you have a project that has a project.html page, with some scripts, the directory layout might look like so:">本安装指南假定你把项目中所有的 JavaScript 文件放到了一个名为 “scripts” 的目录中。 举个例子，假设你创建了一个项目，包含一个project.html文件，以及一些脚本文件，那么，项目的目录结构应该和下面差不多:</p>
 
 <ul>
     <li>project-directory/
@@ -53,7 +53,7 @@
     </ul></li>
 </ul>
 
-<p>Add require.js to the scripts directory, so it looks like so:</p>
+<p title="英文原文：Add require.js to the scripts directory, so it looks like so:">将 require.js 放到 scripts 目录, 目录结构如下:</p>
 
 <ul>
     <li>project-directory/
@@ -71,7 +71,7 @@
     </ul></li>
 </ul>
 
-<p>To take full advantage of the optimization tool, it is suggested that you keep all inline script out of the HTML, and only reference require.js with a requirejs call like so to load your script:</p>
+<p title="英文原文：To take full advantage of the optimization tool, it is suggested that you keep all inline script out of the HTML, and only reference require.js with a requirejs call like so to load your script:">为了充分利用优化工具，建议你将所有的行内脚本代码，放到HTML文件的外面，并且只引用 require.js，让 requirejs 去加载你的其他脚本：</p>
 
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -87,9 +87,9 @@
 &lt;/html&gt;
 </code></pre>
 
-<p>You could also place the script tag end of the &lt;body&gt; section if you do not want the loading of the require.js script to block rendering. For browsers that support it, you could also add an <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/script#Attributes">async attribute</a> to the script tag.</p>
+<p title="英文原文：You could also place the script tag end of the &lt;body&gt; section if you do not want the loading of the require.js script to block rendering. For browsers that support it, you could also add an async attribute to the script tag.">如果你不想因为 require.js 的加载，而阻塞页面渲染，也可以将 script 标签放到 &lt;body&gt; 的结束标签之前。由于浏览器的支持, 你也可以给 script 标签增加一个 <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/script#Attributes">异步加载属性</a>。</p>
 
-<p>Inside of main.js, you can use requirejs() to load any other scripts you need to run. This ensures a single entry point, since <a href="api.html#data-main">the data-main script you specify is loaded asynchronously</a>.</p>
+<p title="英文原文：Inside of main.js, you can use requirejs() to load any other scripts you need to run. This ensures a single entry point, since the data-main script you specify is loaded asynchronously.">在 main.js 中，你可以使用 requirejs() 去加载其他任何你需要运行的脚本。这个可以确保所有的文件都是从这里加载的，参考 <a href=&quot;api.html#data-main&quot;>异步加载 data-main 属性指定的脚本</a>。</p>
 
 <pre><code>requirejs(["helper/util"], function(util) {
     //This function is called when scripts/helper/util.js is loaded.
@@ -99,33 +99,33 @@
 });
 </code></pre>
 
-<p>That will load the helper/util.js script. To get full advantage of RequireJS,
-see the <a href="api.html">API docs</a> to learn more about defining and using
-modules.</p>
+<p title="hat will load the helper/util.js script. To get full advantage of RequireJS,
+see the API docs to learn more about defining and using
+modules.">上面的代码会加载 helper 目录下的 util.js 脚本。为了充分利用 RequireJS，请参阅 <a href="api.html">API 文档</a> 了解更多相关定义和模块化的用法。</p>
 
 </div>
 
 <div class="section">
 <h2>
-    <a name="optimize">Optimize</a>
+    <a name="optimize" title="英文原文：Optimize">优化</a>
     <span class="sectionMark">&sect; 3</span>
 </h2>
 
-<p>Once you are finished doing development and want to deploy your code for your end users, you can use the <a href="optimization.md">optimizer</a> to combine the JavaScript files together and minify it. In the example above, it can combine main.js and helper/util.js into one file and minify the result.</p>
+<p title="英文原文：Once you are finished doing development and want to deploy your code for your end users, you can use the optimizer to combine the JavaScript files together and minify it. In the example above, it can combine main.js and helper/util.js into one file and minify the result.">一旦你完成开发，想发布你的代码给你的终端用户, 你可以使用 <a href="optimization.md">优化</a> 把你的 Javascript 文件合并然后压缩。在上面的例子中，main.js 和 helper/util.js 可以被合并压缩成一个文件。</p>
 </div>
 
 <div class="section">
 <h2>
-    <a name="examples">Examples</a>
+    <a name="examples" title="英文原文：Examples">示例</a>
     <span class="sectionMark">&sect; 4</span>
 </h2>
 
-<p>If you want a starting project to use to try out RequireJS, here are some options:</p>
+<p title="英文原文：If you want a starting project to use to try out RequireJS, here are some options:">如果你想要一个入门项目来试用 RequireJS，下面有一些参考：</p>
 
 <ul>
-    <li><a href="https://github.com/volojs/create-template">Simple one page app</a></li>
-    <li><a href="https://github.com/requirejs/example-multipage">Multipage app</a></li>
-    <li><a href="https://github.com/requirejs/example-multipage-shim">Multipage app with shim config</a></li>
+    <li><a href="https://github.com/volojs/create-template" title="英文原文：Simple one page app">简单的单页面应用</a></li>
+    <li><a href="https://github.com/requirejs/example-multipage" title="英文原文：Multipage app">多页面应用</a></li>
+    <li><a href="https://github.com/requirejs/example-multipage-shim" title="英文原文：Multipage app with shim config">包含 shim 配置信息的多页面应用</a></li>
 </ul>
 </div>
 
